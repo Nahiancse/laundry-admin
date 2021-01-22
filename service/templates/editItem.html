@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="POST" action="/updateItem/{{ item.id }}" enctype="multipart/form-data">
+     {% csrf_token %}
+    <table>
+        <tr>
+            <td><input name="item_name" required value="{{ item.item_name}}"></td>
+        </tr>
+
+         <tr>
+            <td><input type="file"   name="item_image" required value="{{ item.item_image}}"></td>
+        </tr>
+
+
+
+        <tr>
+            <td><button type="submit" >Update</button></td>
+        </tr>
+
+
+    </table>
+
+
+
+
+ </form>
+
+
+
+
+
+{% endblock %}

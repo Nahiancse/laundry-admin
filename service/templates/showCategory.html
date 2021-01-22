@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+<button ><a class="nav-link" href="/load_cat_form">Add New Category</a></button><br>
+<p>{{subItem.item}}</p>
+<table class="table">
+
+
+
+    <tr>
+        <th>SubItems</th>
+        <th>Image</th>
+        <th>Dry Wash Price</th>
+        <th>Steam Wash Price</th>
+        <th>Dry Iron Price</th>
+        <th>Steam Iron Price</th>
+
+    </tr>
+
+    {% for i in subItem %}
+    <tr>
+        <td>{{i.sub_item_name}}</td>
+        <td><img src="{{i.sub_item_image.url}}" alt="connect" style="max-width:120px"></td>
+        <td>{{i.dry_wash_price}}</td>
+        <td>{{i.steam_wash_price}}</td>
+        <td>{{i.dry_iron_price}}</td>
+        <td>{{i.steam_iron_price}}</td>
+        <td>
+            <a href="edit/{{ i.id }}">Edit</a>
+        </td>
+
+        <td>
+            <a href="delete/{{ i.id }}">Delete</a>
+        </td>
+
+
+    </tr>
+    {% endfor %}
+
+
+
+</table>
+
+
+
+
+{% endblock %}

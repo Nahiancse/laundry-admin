@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+      <form action="add_sub_item" method="POST" enctype="multipart/form-data">
+     {% csrf_token %}
+<!--     <label>Items</label>-->
+<!--     <div>{{ form.item}}</div>-->
+
+     <label> Name</label>
+     <div>{{ form.sub_item_name}}</div>
+
+
+
+     <label> Image</label>
+     <div>{{ form.sub_item_image}}</div>
+
+          <label> Dry Wash Price</label>
+     <div>{{ form.dry_wash_price}}</div>
+
+          <label> Steam Wash Price</label>
+     <div>{{ form.steam_wash_price}}</div>
+
+          <label> Dry Iron Price</label>
+     <div>{{ form.dry_iron_price}}</div>
+
+           <label> Steam Iron Price</label>
+     <div>{{ form.steam_iron_price}}</div>
+
+           <label> Main Item</label>
+     <div>{{ form.item}}</div>
+
+
+
+
+
+
+
+     <div><button type="submit">Add </button></div>
+
+
+
+ </form>
+
+
+
+{% endblock %}

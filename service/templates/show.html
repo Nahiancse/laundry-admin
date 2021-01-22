@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<button ><a class="nav-link" href="/load_form">Add New</a></button>
+<table class="table">
+
+
+
+    <tr>
+        <th>Items</th>
+        <th>Image</th>
+        <th></th>
+        <th></th>
+        <th></th>
+
+    </tr>
+
+    {% for i in item %}
+    <tr>
+        <td>{{i.item_name}}</td>
+        <td><img src="{{i.item_image.url}}" alt="connect" style="max-width:120px"></td>
+        <td>
+            <a href="editItem/{{ i.id }}">Edit</a>
+        </td>
+
+        <td>
+            <a href="delete/{{ i.id }}">Delete</a>
+        </td>
+
+           <td>
+<!--            <a href="/showCategory">Add Category</a>-->
+            <a href="{% url 'index' parent_or_child='child' pk=i.id %}">Show Category</a>
+        </td>
+    </tr>
+    {% endfor %}
+
+
+
+</table>
+
+
+
+
+{% endblock %}
